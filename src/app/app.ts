@@ -1,14 +1,14 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { TodoList } from './todo-list/todo-list';
-import { NgIcon, provideIcons } from '@ng-icons/core';
+import { Component, signal } from '@angular/core'
+import { RouterOutlet } from '@angular/router'
+import { TodoList } from './todo-list/todo-list'
+import { NgIcon, provideIcons } from '@ng-icons/core'
 import {
   heroArrowLeft,
   heroArrowRight,
   heroCheck,
   heroMinus,
   heroPlus
-} from '@ng-icons/heroicons/outline';
+} from '@ng-icons/heroicons/outline'
 
 @Component({
   selector: 'app-root',
@@ -20,5 +20,5 @@ import {
   viewProviders: [provideIcons({ heroMinus, heroCheck, heroPlus, heroArrowLeft, heroArrowRight })]
 })
 export class App {
-  protected readonly title = signal('frontend');
+  protected readonly title = signal('frontend')
 }
