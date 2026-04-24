@@ -8,5 +8,7 @@
         "parser": "angular"
       }
     }
-  ]
+  ],
+  "trailingComma": "none",
+  "plugins": ["prettier-plugin-tailwindcss"]
 }
