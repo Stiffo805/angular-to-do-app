@@ -1,9 +1,20 @@
-import { Injectable, signal } from '@angular/core'
+import { effect, Injectable, signal } from '@angular/core'
 import { TasksList } from './utils/types'
 
 @Injectable({ providedIn: 'root' })
 export class TasksListsService {
-  protected tasksLists = signal<TasksList[]>([])
+  protected tasksLists = signal<TasksList[]>(
+    (JSON.parse(localStorage.getItem('tasksLists') ?? '[]') as TasksList[]).map((taskList) => ({
+      ...taskList,
+      date: new Date(taskList.date)
+    }))
+  )
+
+  constructor() {
+    effect(() => {
+      localStorage.setItem('tasksLists', JSON.stringify(this.tasksLists()))
+    })
+  }
 
   getDailyTaskList(date: Date) {
     return this.tasksLists().find((list) => list.date.toDateString() === date.toDateString())

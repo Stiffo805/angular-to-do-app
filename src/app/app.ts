@@ -13,7 +13,7 @@ import {
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, TodoList, NgIcon],
-  template: ` <div class="flex min-h-screen items-center justify-center">
+  template: ` <div class="flex min-h-screen items-center justify-center bg-blue-200">
     <app-todo-list />
   </div>`,
   styleUrl: './app.css',
